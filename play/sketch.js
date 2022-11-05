@@ -39,6 +39,10 @@ function setup() {
 //    checkBox.position(x+width-150, y+180);
 }
 
+function setLineDash(list) {
+  drawingContext.setLineDash(list);
+}
+
 function checkedBox() {
     if(checkBox.checked() == false) {
         erase();
@@ -57,6 +61,7 @@ function windowResized() {
 function draw() {
     createAxis(); // WIP
     
+    setLineDash([1]);
     let origin = createVector(100, 350);
     translate(origin.x, origin.y);
     
@@ -81,26 +86,27 @@ function draw() {
     text('v1', v1.x+offset, v1.y+offset);
     text('v2', v2.x+offset, v2.y+offset);
     
-    var x = (windowWidth - width) / 2;
-    var y = (windowHeight - height) / 2;
-    text('v1: x', 530 , -325);
-    text('v1: y', 530 , -290);
-    
-    text('v2: x', 530 , -240);
-    text('v2: y', 530 , -205);
-
-    
     stroke('red');
     strokeWeight(2);
     text('R', v3.x+offset, v3.y+offset);
     
     stroke('gray');
     strokeWeight(0);
-    
+    setLineDash([5,5]);
     push();
     line(v1.x, v1.y, v3.x, v3.y);
     line(v2.x, v2.y, v3.x, v3.y);
     pop();
+    
+    setLineDash([1]);
+    strokeWeight(1);
+    var x = (windowWidth - width) / 2;
+    var y = (windowHeight - height) / 2;
+    text('v1: x', 530 , y);
+    text('v1: y', 530 , -290);
+    
+    text('v2: x', 530 , -240);
+    text('v2: y', 530 , -205);
 }
 
 
