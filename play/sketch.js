@@ -3,7 +3,7 @@ let v0, v1, v2, v3;
 let checkBox;
 
 function setup() {
-    let cnv = createCanvas(windowWidth/2, windowHeight/2);
+    let cnv = createCanvas(windowWidth/2, windowHeight/1.5);
     
     var x = (windowWidth - width) / 2;
     var y = (windowHeight - height) / 2;
