@@ -102,11 +102,12 @@ function draw() {
     strokeWeight(1);
     var x = (windowWidth - width) / 2;
     var y = (windowHeight - height) / 2;
-    text('v1: x', 530 , y);
-    text('v1: y', 530 , -290);
+    let xPos = v1x.x/1.8-v1x.width/1.5;
+    text('v1: x' , xPos , -y-180);
+    text('v1: y', xPos , -y-145);
     
-    text('v2: x', 530 , -240);
-    text('v2: y', 530 , -205);
+    text('v2: x', xPos , -y-95);
+    text('v2: y', xPos , -y-57);
 }
 
 
